@@ -49,7 +49,7 @@ class AvailabilityController extends Controller
      */
     public function show(Employee $employee, Availability $availability)
     {
-        return new AvalaibilityResource($avalaibility);
+        return new AvailabilityResource($availability);
     }
 
     /**
