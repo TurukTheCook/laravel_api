@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Employee;
+namespace App\Http\Resources\Availability;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class EmployeeResource extends JsonResource
+class AvailabilityResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,10 +16,9 @@ class EmployeeResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'appointments' => route('employee.appointments.index', $this->id),
-            'availabilities' => route('availabilities.index', $this->id),
+            'date' => $this->date,
+            'time' => $this->time,
+            'employee' => route('employees.show', $this->employee_id),
         ];
     }
 }

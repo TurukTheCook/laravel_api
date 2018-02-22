@@ -30,6 +30,10 @@ Route::group(['prefix' => 'v0'], function() {
             'destroy' => 'employee.appointments.destroy',
         ]]);
     });
+    Route::group(['prefix' => 'employees'], function () {
+        Route::apiResource('/{employee}/availabilities', 'AvailabilityController');
+    });
+
     Route::group(['prefix' => 'clients'], function () {
         Route::apiResource('/{client}/appointments', 'ClientAppointmentController', ['names' => [
             'index' => 'client.appointments.index',
